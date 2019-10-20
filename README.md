@@ -5,7 +5,7 @@ Config API lets you easily manage configuration at scale.
 This C# SDK is for the [Cloudmersive Document and Data Conversion API](https://www.cloudmersive.com/convert-api):
 
 - API version: v1
-- SDK version: 2.0.1
+- SDK version: 2.0.2
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
 
 <a name="frameworks-supported"></a>
@@ -102,6 +102,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *SettingsApi* | [**SettingsCreateSetting**](docs/SettingsApi.md#settingscreatesetting) | **POST** /config/settings/create | 
 *SettingsApi* | [**SettingsListSettings**](docs/SettingsApi.md#settingslistsettings) | **POST** /config/settings/list | 
+*SettingsApi* | [**SettingsUpdateSetting**](docs/SettingsApi.md#settingsupdatesetting) | **POST** /config/settings/update | 
 
 
 <a name="documentation-for-models"></a>
@@ -112,6 +113,8 @@ Class | Method | HTTP request | Description
  - [Model.ListSettingsRequest](docs/ListSettingsRequest.md)
  - [Model.ListSettingsResponse](docs/ListSettingsResponse.md)
  - [Model.SettingValue](docs/SettingValue.md)
+ - [Model.UpdateSettingRequest](docs/UpdateSettingRequest.md)
+ - [Model.UpdateSettingResponse](docs/UpdateSettingResponse.md)
 
 
 <a name="documentation-for-authorization"></a>

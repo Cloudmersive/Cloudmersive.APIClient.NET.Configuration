@@ -66,6 +66,27 @@ namespace Cloudmersive.APIClient.NET.Configuration.Api
         /// <param name="request"></param>
         /// <returns>ApiResponse of ListSettingsResponse</returns>
         ApiResponse<ListSettingsResponse> SettingsListSettingsWithHttpInfo (ListSettingsRequest request);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>UpdateSettingResponse</returns>
+        UpdateSettingResponse SettingsUpdateSetting (UpdateSettingRequest request);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>ApiResponse of UpdateSettingResponse</returns>
+        ApiResponse<UpdateSettingResponse> SettingsUpdateSettingWithHttpInfo (UpdateSettingRequest request);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -110,6 +131,27 @@ namespace Cloudmersive.APIClient.NET.Configuration.Api
         /// <param name="request"></param>
         /// <returns>Task of ApiResponse (ListSettingsResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<ListSettingsResponse>> SettingsListSettingsAsyncWithHttpInfo (ListSettingsRequest request);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of UpdateSettingResponse</returns>
+        System.Threading.Tasks.Task<UpdateSettingResponse> SettingsUpdateSettingAsync (UpdateSettingRequest request);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of ApiResponse (UpdateSettingResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UpdateSettingResponse>> SettingsUpdateSettingAsyncWithHttpInfo (UpdateSettingRequest request);
         #endregion Asynchronous Operations
     }
 
@@ -554,6 +596,179 @@ namespace Cloudmersive.APIClient.NET.Configuration.Api
             return new ApiResponse<ListSettingsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (ListSettingsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListSettingsResponse)));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>UpdateSettingResponse</returns>
+        public UpdateSettingResponse SettingsUpdateSetting (UpdateSettingRequest request)
+        {
+             ApiResponse<UpdateSettingResponse> localVarResponse = SettingsUpdateSettingWithHttpInfo(request);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>ApiResponse of UpdateSettingResponse</returns>
+        public ApiResponse< UpdateSettingResponse > SettingsUpdateSettingWithHttpInfo (UpdateSettingRequest request)
+        {
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling SettingsApi->SettingsUpdateSetting");
+
+            var localVarPath = "/config/settings/update";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+            // authentication (Apikey) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Apikey")))
+            {
+                localVarHeaderParams["Apikey"] = this.Configuration.GetApiKeyWithPrefix("Apikey");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("SettingsUpdateSetting", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UpdateSettingResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (UpdateSettingResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UpdateSettingResponse)));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of UpdateSettingResponse</returns>
+        public async System.Threading.Tasks.Task<UpdateSettingResponse> SettingsUpdateSettingAsync (UpdateSettingRequest request)
+        {
+             ApiResponse<UpdateSettingResponse> localVarResponse = await SettingsUpdateSettingAsyncWithHttpInfo(request);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of ApiResponse (UpdateSettingResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<UpdateSettingResponse>> SettingsUpdateSettingAsyncWithHttpInfo (UpdateSettingRequest request)
+        {
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling SettingsApi->SettingsUpdateSetting");
+
+            var localVarPath = "/config/settings/update";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+            // authentication (Apikey) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Apikey")))
+            {
+                localVarHeaderParams["Apikey"] = this.Configuration.GetApiKeyWithPrefix("Apikey");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("SettingsUpdateSetting", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UpdateSettingResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (UpdateSettingResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UpdateSettingResponse)));
         }
 
     }

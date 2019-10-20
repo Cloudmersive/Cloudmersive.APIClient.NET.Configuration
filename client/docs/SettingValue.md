@@ -8,7 +8,9 @@ Name | Type | Description | Notes
 **ConfigSettingValue** | **Object** |  | [optional] 
 **ConfigSettingLastModified** | **DateTime?** |  | [optional] 
 **ConfigSettingName** | **string** |  | [optional] 
-**ConfigSettingType** | **string** |  | [optional] 
+**ConfigSettingDescription** | **string** |  | [optional] 
+**ConfigSettingTags** | **string** |  | [optional] 
+**ConfigSettingType** | **string** | Possible values are: STRING | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -107,6 +107,22 @@ namespace Cloudmersive.APIClient.NET.Configuration.Test
             // TODO unit test for the property 'ConfigSettingName'
         }
         /// <summary>
+        /// Test the property 'ConfigSettingDescription'
+        /// </summary>
+        [Test]
+        public void ConfigSettingDescriptionTest()
+        {
+            // TODO unit test for the property 'ConfigSettingDescription'
+        }
+        /// <summary>
+        /// Test the property 'ConfigSettingTags'
+        /// </summary>
+        [Test]
+        public void ConfigSettingTagsTest()
+        {
+            // TODO unit test for the property 'ConfigSettingTags'
+        }
+        /// <summary>
         /// Test the property 'ConfigSettingType'
         /// </summary>
         [Test]

@@ -38,13 +38,17 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
         /// <param name="settingName">settingName.</param>
         /// <param name="settingType">settingType.</param>
         /// <param name="settingValue">settingValue.</param>
-        public CreateSettingRequest(string bucketID = default(string), string bucketSecretKey = default(string), string settingName = default(string), string settingType = default(string), Object settingValue = default(Object))
+        /// <param name="settingDescription">settingDescription.</param>
+        /// <param name="settingTags">settingTags.</param>
+        public CreateSettingRequest(string bucketID = default(string), string bucketSecretKey = default(string), string settingName = default(string), string settingType = default(string), Object settingValue = default(Object), string settingDescription = default(string), string settingTags = default(string))
         {
             this.BucketID = bucketID;
             this.BucketSecretKey = bucketSecretKey;
             this.SettingName = settingName;
             this.SettingType = settingType;
             this.SettingValue = settingValue;
+            this.SettingDescription = settingDescription;
+            this.SettingTags = settingTags;
         }
         
         /// <summary>
@@ -78,6 +82,18 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
         public Object SettingValue { get; set; }
 
         /// <summary>
+        /// Gets or Sets SettingDescription
+        /// </summary>
+        [DataMember(Name="SettingDescription", EmitDefaultValue=false)]
+        public string SettingDescription { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SettingTags
+        /// </summary>
+        [DataMember(Name="SettingTags", EmitDefaultValue=false)]
+        public string SettingTags { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -90,6 +106,8 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
             sb.Append("  SettingName: ").Append(SettingName).Append("\n");
             sb.Append("  SettingType: ").Append(SettingType).Append("\n");
             sb.Append("  SettingValue: ").Append(SettingValue).Append("\n");
+            sb.Append("  SettingDescription: ").Append(SettingDescription).Append("\n");
+            sb.Append("  SettingTags: ").Append(SettingTags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -148,6 +166,16 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
                     this.SettingValue == input.SettingValue ||
                     (this.SettingValue != null &&
                     this.SettingValue.Equals(input.SettingValue))
+                ) && 
+                (
+                    this.SettingDescription == input.SettingDescription ||
+                    (this.SettingDescription != null &&
+                    this.SettingDescription.Equals(input.SettingDescription))
+                ) && 
+                (
+                    this.SettingTags == input.SettingTags ||
+                    (this.SettingTags != null &&
+                    this.SettingTags.Equals(input.SettingTags))
                 );
         }
 
@@ -170,6 +198,10 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
                     hashCode = hashCode * 59 + this.SettingType.GetHashCode();
                 if (this.SettingValue != null)
                     hashCode = hashCode * 59 + this.SettingValue.GetHashCode();
+                if (this.SettingDescription != null)
+                    hashCode = hashCode * 59 + this.SettingDescription.GetHashCode();
+                if (this.SettingTags != null)
+                    hashCode = hashCode * 59 + this.SettingTags.GetHashCode();
                 return hashCode;
             }
         }

@@ -88,6 +88,18 @@ namespace Cloudmersive.APIClient.NET.Configuration.Test
             //Assert.IsInstanceOf<ListSettingsResponse> (response, "response is ListSettingsResponse");
         }
         
+        /// <summary>
+        /// Test SettingsUpdateSetting
+        /// </summary>
+        [Test]
+        public void SettingsUpdateSettingTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //UpdateSettingRequest request = null;
+            //var response = instance.SettingsUpdateSetting(request);
+            //Assert.IsInstanceOf<UpdateSettingResponse> (response, "response is UpdateSettingResponse");
+        }
+        
     }
 
 }

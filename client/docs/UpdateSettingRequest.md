@@ -1,15 +1,11 @@
-# Cloudmersive.APIClient.NET.Configuration.Model.CreateSettingRequest
+# Cloudmersive.APIClient.NET.Configuration.Model.UpdateSettingRequest
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BucketID** | **string** |  | [optional] 
 **BucketSecretKey** | **string** |  | [optional] 
-**SettingName** | **string** |  | [optional] 
-**SettingType** | **string** |  | [optional] 
-**SettingValue** | **Object** |  | [optional] 
-**SettingDescription** | **string** |  | [optional] 
-**SettingTags** | **string** |  | [optional] 
+**SettingToUpdate** | [**SettingValue**](SettingValue.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

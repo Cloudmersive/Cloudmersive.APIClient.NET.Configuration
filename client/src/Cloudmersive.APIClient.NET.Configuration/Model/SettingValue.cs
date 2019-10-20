@@ -38,14 +38,18 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
         /// <param name="configSettingValue">configSettingValue.</param>
         /// <param name="configSettingLastModified">configSettingLastModified.</param>
         /// <param name="configSettingName">configSettingName.</param>
-        /// <param name="configSettingType">configSettingType.</param>
-        public SettingValue(string configSettingValueID = default(string), string configSettingDefinitionID = default(string), Object configSettingValue = default(Object), DateTime? configSettingLastModified = default(DateTime?), string configSettingName = default(string), string configSettingType = default(string))
+        /// <param name="configSettingDescription">configSettingDescription.</param>
+        /// <param name="configSettingTags">configSettingTags.</param>
+        /// <param name="configSettingType">Possible values are: STRING.</param>
+        public SettingValue(string configSettingValueID = default(string), string configSettingDefinitionID = default(string), Object configSettingValue = default(Object), DateTime? configSettingLastModified = default(DateTime?), string configSettingName = default(string), string configSettingDescription = default(string), string configSettingTags = default(string), string configSettingType = default(string))
         {
             this.ConfigSettingValueID = configSettingValueID;
             this.ConfigSettingDefinitionID = configSettingDefinitionID;
             this.ConfigSettingValue = configSettingValue;
             this.ConfigSettingLastModified = configSettingLastModified;
             this.ConfigSettingName = configSettingName;
+            this.ConfigSettingDescription = configSettingDescription;
+            this.ConfigSettingTags = configSettingTags;
             this.ConfigSettingType = configSettingType;
         }
         
@@ -80,8 +84,21 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
         public string ConfigSettingName { get; set; }
 
         /// <summary>
-        /// Gets or Sets ConfigSettingType
+        /// Gets or Sets ConfigSettingDescription
         /// </summary>
+        [DataMember(Name="ConfigSettingDescription", EmitDefaultValue=false)]
+        public string ConfigSettingDescription { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ConfigSettingTags
+        /// </summary>
+        [DataMember(Name="ConfigSettingTags", EmitDefaultValue=false)]
+        public string ConfigSettingTags { get; set; }
+
+        /// <summary>
+        /// Possible values are: STRING
+        /// </summary>
+        /// <value>Possible values are: STRING</value>
         [DataMember(Name="ConfigSettingType", EmitDefaultValue=false)]
         public string ConfigSettingType { get; set; }
 
@@ -98,6 +115,8 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
             sb.Append("  ConfigSettingValue: ").Append(ConfigSettingValue).Append("\n");
             sb.Append("  ConfigSettingLastModified: ").Append(ConfigSettingLastModified).Append("\n");
             sb.Append("  ConfigSettingName: ").Append(ConfigSettingName).Append("\n");
+            sb.Append("  ConfigSettingDescription: ").Append(ConfigSettingDescription).Append("\n");
+            sb.Append("  ConfigSettingTags: ").Append(ConfigSettingTags).Append("\n");
             sb.Append("  ConfigSettingType: ").Append(ConfigSettingType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -159,6 +178,16 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
                     this.ConfigSettingName.Equals(input.ConfigSettingName))
                 ) && 
                 (
+                    this.ConfigSettingDescription == input.ConfigSettingDescription ||
+                    (this.ConfigSettingDescription != null &&
+                    this.ConfigSettingDescription.Equals(input.ConfigSettingDescription))
+                ) && 
+                (
+                    this.ConfigSettingTags == input.ConfigSettingTags ||
+                    (this.ConfigSettingTags != null &&
+                    this.ConfigSettingTags.Equals(input.ConfigSettingTags))
+                ) && 
+                (
                     this.ConfigSettingType == input.ConfigSettingType ||
                     (this.ConfigSettingType != null &&
                     this.ConfigSettingType.Equals(input.ConfigSettingType))
@@ -184,6 +213,10 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
                     hashCode = hashCode * 59 + this.ConfigSettingLastModified.GetHashCode();
                 if (this.ConfigSettingName != null)
                     hashCode = hashCode * 59 + this.ConfigSettingName.GetHashCode();
+                if (this.ConfigSettingDescription != null)
+                    hashCode = hashCode * 59 + this.ConfigSettingDescription.GetHashCode();
+                if (this.ConfigSettingTags != null)
+                    hashCode = hashCode * 59 + this.ConfigSettingTags.GetHashCode();
                 if (this.ConfigSettingType != null)
                     hashCode = hashCode * 59 + this.ConfigSettingType.GetHashCode();
                 return hashCode;
