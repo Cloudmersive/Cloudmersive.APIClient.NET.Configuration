@@ -98,6 +98,22 @@ namespace Cloudmersive.APIClient.NET.Configuration.Test
         {
             // TODO unit test for the property 'ConfigSettingLastModified'
         }
+        /// <summary>
+        /// Test the property 'ConfigSettingName'
+        /// </summary>
+        [Test]
+        public void ConfigSettingNameTest()
+        {
+            // TODO unit test for the property 'ConfigSettingName'
+        }
+        /// <summary>
+        /// Test the property 'ConfigSettingType'
+        /// </summary>
+        [Test]
+        public void ConfigSettingTypeTest()
+        {
+            // TODO unit test for the property 'ConfigSettingType'
+        }
 
     }
 

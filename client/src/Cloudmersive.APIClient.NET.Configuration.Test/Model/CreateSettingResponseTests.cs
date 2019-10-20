@@ -90,6 +90,14 @@ namespace Cloudmersive.APIClient.NET.Configuration.Test
         {
             // TODO unit test for the property 'SettingValueID'
         }
+        /// <summary>
+        /// Test the property 'ErrorMessage'
+        /// </summary>
+        [Test]
+        public void ErrorMessageTest()
+        {
+            // TODO unit test for the property 'ErrorMessage'
+        }
 
     }
 

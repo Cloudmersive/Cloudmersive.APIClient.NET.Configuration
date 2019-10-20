@@ -36,11 +36,13 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
         /// <param name="successful">successful.</param>
         /// <param name="settingDefinitionID">settingDefinitionID.</param>
         /// <param name="settingValueID">settingValueID.</param>
-        public CreateSettingResponse(bool? successful = default(bool?), string settingDefinitionID = default(string), string settingValueID = default(string))
+        /// <param name="errorMessage">errorMessage.</param>
+        public CreateSettingResponse(bool? successful = default(bool?), string settingDefinitionID = default(string), string settingValueID = default(string), string errorMessage = default(string))
         {
             this.Successful = successful;
             this.SettingDefinitionID = settingDefinitionID;
             this.SettingValueID = settingValueID;
+            this.ErrorMessage = errorMessage;
         }
         
         /// <summary>
@@ -62,6 +64,12 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
         public string SettingValueID { get; set; }
 
         /// <summary>
+        /// Gets or Sets ErrorMessage
+        /// </summary>
+        [DataMember(Name="ErrorMessage", EmitDefaultValue=false)]
+        public string ErrorMessage { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -72,6 +80,7 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
             sb.Append("  Successful: ").Append(Successful).Append("\n");
             sb.Append("  SettingDefinitionID: ").Append(SettingDefinitionID).Append("\n");
             sb.Append("  SettingValueID: ").Append(SettingValueID).Append("\n");
+            sb.Append("  ErrorMessage: ").Append(ErrorMessage).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -120,6 +129,11 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
                     this.SettingValueID == input.SettingValueID ||
                     (this.SettingValueID != null &&
                     this.SettingValueID.Equals(input.SettingValueID))
+                ) && 
+                (
+                    this.ErrorMessage == input.ErrorMessage ||
+                    (this.ErrorMessage != null &&
+                    this.ErrorMessage.Equals(input.ErrorMessage))
                 );
         }
 
@@ -138,6 +152,8 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
                     hashCode = hashCode * 59 + this.SettingDefinitionID.GetHashCode();
                 if (this.SettingValueID != null)
                     hashCode = hashCode * 59 + this.SettingValueID.GetHashCode();
+                if (this.ErrorMessage != null)
+                    hashCode = hashCode * 59 + this.ErrorMessage.GetHashCode();
                 return hashCode;
             }
         }

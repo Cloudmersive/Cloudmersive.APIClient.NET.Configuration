@@ -37,12 +37,16 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
         /// <param name="configSettingDefinitionID">configSettingDefinitionID.</param>
         /// <param name="configSettingValue">configSettingValue.</param>
         /// <param name="configSettingLastModified">configSettingLastModified.</param>
-        public SettingValue(string configSettingValueID = default(string), string configSettingDefinitionID = default(string), Object configSettingValue = default(Object), DateTime? configSettingLastModified = default(DateTime?))
+        /// <param name="configSettingName">configSettingName.</param>
+        /// <param name="configSettingType">configSettingType.</param>
+        public SettingValue(string configSettingValueID = default(string), string configSettingDefinitionID = default(string), Object configSettingValue = default(Object), DateTime? configSettingLastModified = default(DateTime?), string configSettingName = default(string), string configSettingType = default(string))
         {
             this.ConfigSettingValueID = configSettingValueID;
             this.ConfigSettingDefinitionID = configSettingDefinitionID;
             this.ConfigSettingValue = configSettingValue;
             this.ConfigSettingLastModified = configSettingLastModified;
+            this.ConfigSettingName = configSettingName;
+            this.ConfigSettingType = configSettingType;
         }
         
         /// <summary>
@@ -70,6 +74,18 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
         public DateTime? ConfigSettingLastModified { get; set; }
 
         /// <summary>
+        /// Gets or Sets ConfigSettingName
+        /// </summary>
+        [DataMember(Name="ConfigSettingName", EmitDefaultValue=false)]
+        public string ConfigSettingName { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ConfigSettingType
+        /// </summary>
+        [DataMember(Name="ConfigSettingType", EmitDefaultValue=false)]
+        public string ConfigSettingType { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -81,6 +97,8 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
             sb.Append("  ConfigSettingDefinitionID: ").Append(ConfigSettingDefinitionID).Append("\n");
             sb.Append("  ConfigSettingValue: ").Append(ConfigSettingValue).Append("\n");
             sb.Append("  ConfigSettingLastModified: ").Append(ConfigSettingLastModified).Append("\n");
+            sb.Append("  ConfigSettingName: ").Append(ConfigSettingName).Append("\n");
+            sb.Append("  ConfigSettingType: ").Append(ConfigSettingType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -134,6 +152,16 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
                     this.ConfigSettingLastModified == input.ConfigSettingLastModified ||
                     (this.ConfigSettingLastModified != null &&
                     this.ConfigSettingLastModified.Equals(input.ConfigSettingLastModified))
+                ) && 
+                (
+                    this.ConfigSettingName == input.ConfigSettingName ||
+                    (this.ConfigSettingName != null &&
+                    this.ConfigSettingName.Equals(input.ConfigSettingName))
+                ) && 
+                (
+                    this.ConfigSettingType == input.ConfigSettingType ||
+                    (this.ConfigSettingType != null &&
+                    this.ConfigSettingType.Equals(input.ConfigSettingType))
                 );
         }
 
@@ -154,6 +182,10 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
                     hashCode = hashCode * 59 + this.ConfigSettingValue.GetHashCode();
                 if (this.ConfigSettingLastModified != null)
                     hashCode = hashCode * 59 + this.ConfigSettingLastModified.GetHashCode();
+                if (this.ConfigSettingName != null)
+                    hashCode = hashCode * 59 + this.ConfigSettingName.GetHashCode();
+                if (this.ConfigSettingType != null)
+                    hashCode = hashCode * 59 + this.ConfigSettingType.GetHashCode();
                 return hashCode;
             }
         }
