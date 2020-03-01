@@ -25,7 +25,7 @@ using SwaggerDateConverter = Cloudmersive.APIClient.NET.Configuration.Client.Swa
 namespace Cloudmersive.APIClient.NET.Configuration.Model
 {
     /// <summary>
-    /// SettingValue
+    /// Value of a setting
     /// </summary>
     [DataContract]
     public partial class SettingValue :  IEquatable<SettingValue>, IValidatableObject
@@ -33,14 +33,14 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SettingValue" /> class.
         /// </summary>
-        /// <param name="configSettingValueID">configSettingValueID.</param>
-        /// <param name="configSettingDefinitionID">configSettingDefinitionID.</param>
-        /// <param name="configSettingValue">configSettingValue.</param>
-        /// <param name="configSettingLastModified">configSettingLastModified.</param>
-        /// <param name="configSettingName">configSettingName.</param>
-        /// <param name="configSettingDescription">configSettingDescription.</param>
-        /// <param name="configSettingTags">configSettingTags.</param>
-        /// <param name="configSettingType">Possible values are: STRING.</param>
+        /// <param name="configSettingValueID">The ID of the setting value.</param>
+        /// <param name="configSettingDefinitionID">The ID of the definition of the setting.</param>
+        /// <param name="configSettingValue">The value of the setting.</param>
+        /// <param name="configSettingLastModified">The last modified date of the setting.</param>
+        /// <param name="configSettingName">Name of the setting.</param>
+        /// <param name="configSettingDescription">Description of the setting.</param>
+        /// <param name="configSettingTags">Setting tags.</param>
+        /// <param name="configSettingType">Possible values are: STRING, JSON.</param>
         public SettingValue(string configSettingValueID = default(string), string configSettingDefinitionID = default(string), Object configSettingValue = default(Object), DateTime? configSettingLastModified = default(DateTime?), string configSettingName = default(string), string configSettingDescription = default(string), string configSettingTags = default(string), string configSettingType = default(string))
         {
             this.ConfigSettingValueID = configSettingValueID;
@@ -54,51 +54,58 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
         }
         
         /// <summary>
-        /// Gets or Sets ConfigSettingValueID
+        /// The ID of the setting value
         /// </summary>
+        /// <value>The ID of the setting value</value>
         [DataMember(Name="ConfigSettingValueID", EmitDefaultValue=false)]
         public string ConfigSettingValueID { get; set; }
 
         /// <summary>
-        /// Gets or Sets ConfigSettingDefinitionID
+        /// The ID of the definition of the setting
         /// </summary>
+        /// <value>The ID of the definition of the setting</value>
         [DataMember(Name="ConfigSettingDefinitionID", EmitDefaultValue=false)]
         public string ConfigSettingDefinitionID { get; set; }
 
         /// <summary>
-        /// Gets or Sets ConfigSettingValue
+        /// The value of the setting
         /// </summary>
+        /// <value>The value of the setting</value>
         [DataMember(Name="ConfigSettingValue", EmitDefaultValue=false)]
         public Object ConfigSettingValue { get; set; }
 
         /// <summary>
-        /// Gets or Sets ConfigSettingLastModified
+        /// The last modified date of the setting
         /// </summary>
+        /// <value>The last modified date of the setting</value>
         [DataMember(Name="ConfigSettingLastModified", EmitDefaultValue=false)]
         public DateTime? ConfigSettingLastModified { get; set; }
 
         /// <summary>
-        /// Gets or Sets ConfigSettingName
+        /// Name of the setting
         /// </summary>
+        /// <value>Name of the setting</value>
         [DataMember(Name="ConfigSettingName", EmitDefaultValue=false)]
         public string ConfigSettingName { get; set; }
 
         /// <summary>
-        /// Gets or Sets ConfigSettingDescription
+        /// Description of the setting
         /// </summary>
+        /// <value>Description of the setting</value>
         [DataMember(Name="ConfigSettingDescription", EmitDefaultValue=false)]
         public string ConfigSettingDescription { get; set; }
 
         /// <summary>
-        /// Gets or Sets ConfigSettingTags
+        /// Setting tags
         /// </summary>
+        /// <value>Setting tags</value>
         [DataMember(Name="ConfigSettingTags", EmitDefaultValue=false)]
         public string ConfigSettingTags { get; set; }
 
         /// <summary>
-        /// Possible values are: STRING
+        /// Possible values are: STRING, JSON
         /// </summary>
-        /// <value>Possible values are: STRING</value>
+        /// <value>Possible values are: STRING, JSON</value>
         [DataMember(Name="ConfigSettingType", EmitDefaultValue=false)]
         public string ConfigSettingType { get; set; }
 

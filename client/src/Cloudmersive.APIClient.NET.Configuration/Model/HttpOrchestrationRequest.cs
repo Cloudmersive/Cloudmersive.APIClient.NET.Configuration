@@ -25,26 +25,26 @@ using SwaggerDateConverter = Cloudmersive.APIClient.NET.Configuration.Client.Swa
 namespace Cloudmersive.APIClient.NET.Configuration.Model
 {
     /// <summary>
-    /// Result of enumerating settings
+    /// HTTP Orchestration request
     /// </summary>
     [DataContract]
-    public partial class ListSettingsResponse :  IEquatable<ListSettingsResponse>, IValidatableObject
+    public partial class HttpOrchestrationRequest :  IEquatable<HttpOrchestrationRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListSettingsResponse" /> class.
+        /// Initializes a new instance of the <see cref="HttpOrchestrationRequest" /> class.
         /// </summary>
-        /// <param name="settings">Settings in the bucket.</param>
-        public ListSettingsResponse(List<SettingValue> settings = default(List<SettingValue>))
+        /// <param name="httpTasks">Tasks to perform, in the order you wish to perform them.</param>
+        public HttpOrchestrationRequest(List<HttpOrchestrationTask> httpTasks = default(List<HttpOrchestrationTask>))
         {
-            this.Settings = settings;
+            this.HttpTasks = httpTasks;
         }
         
         /// <summary>
-        /// Settings in the bucket
+        /// Tasks to perform, in the order you wish to perform them
         /// </summary>
-        /// <value>Settings in the bucket</value>
-        [DataMember(Name="Settings", EmitDefaultValue=false)]
-        public List<SettingValue> Settings { get; set; }
+        /// <value>Tasks to perform, in the order you wish to perform them</value>
+        [DataMember(Name="HttpTasks", EmitDefaultValue=false)]
+        public List<HttpOrchestrationTask> HttpTasks { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -53,8 +53,8 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ListSettingsResponse {\n");
-            sb.Append("  Settings: ").Append(Settings).Append("\n");
+            sb.Append("class HttpOrchestrationRequest {\n");
+            sb.Append("  HttpTasks: ").Append(HttpTasks).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,24 +75,24 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ListSettingsResponse);
+            return this.Equals(input as HttpOrchestrationRequest);
         }
 
         /// <summary>
-        /// Returns true if ListSettingsResponse instances are equal
+        /// Returns true if HttpOrchestrationRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of ListSettingsResponse to be compared</param>
+        /// <param name="input">Instance of HttpOrchestrationRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ListSettingsResponse input)
+        public bool Equals(HttpOrchestrationRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Settings == input.Settings ||
-                    this.Settings != null &&
-                    this.Settings.SequenceEqual(input.Settings)
+                    this.HttpTasks == input.HttpTasks ||
+                    this.HttpTasks != null &&
+                    this.HttpTasks.SequenceEqual(input.HttpTasks)
                 );
         }
 
@@ -105,8 +105,8 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Settings != null)
-                    hashCode = hashCode * 59 + this.Settings.GetHashCode();
+                if (this.HttpTasks != null)
+                    hashCode = hashCode * 59 + this.HttpTasks.GetHashCode();
                 return hashCode;
             }
         }

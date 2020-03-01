@@ -25,7 +25,7 @@ using SwaggerDateConverter = Cloudmersive.APIClient.NET.Configuration.Client.Swa
 namespace Cloudmersive.APIClient.NET.Configuration.Model
 {
     /// <summary>
-    /// CreateSettingRequest
+    /// Request to create a setting
     /// </summary>
     [DataContract]
     public partial class CreateSettingRequest :  IEquatable<CreateSettingRequest>, IValidatableObject
@@ -33,13 +33,13 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateSettingRequest" /> class.
         /// </summary>
-        /// <param name="bucketID">bucketID.</param>
-        /// <param name="bucketSecretKey">bucketSecretKey.</param>
-        /// <param name="settingName">settingName.</param>
-        /// <param name="settingType">settingType.</param>
-        /// <param name="settingValue">settingValue.</param>
-        /// <param name="settingDescription">settingDescription.</param>
-        /// <param name="settingTags">settingTags.</param>
+        /// <param name="bucketID">BucketID of the bucket to place the setting in; you can create a bucket by navigating to account.cloudmersive.com, clicking on Settings &amp;gt; API Configuration &amp;gt; Create Bucket.</param>
+        /// <param name="bucketSecretKey">SecretKey of the bucket to place the setting in; you can create a bucket by navigating to account.cloudmersive.com, clicking on Settings &amp;gt; API Configuration &amp;gt; Create Bucket.</param>
+        /// <param name="settingName">Name of the setting to create.</param>
+        /// <param name="settingType">Type of setting to create; possible values are STRING, JSON.</param>
+        /// <param name="settingValue">Initial value of the setting.</param>
+        /// <param name="settingDescription">Description of the setting.</param>
+        /// <param name="settingTags">Tags to apply to the setting.</param>
         public CreateSettingRequest(string bucketID = default(string), string bucketSecretKey = default(string), string settingName = default(string), string settingType = default(string), Object settingValue = default(Object), string settingDescription = default(string), string settingTags = default(string))
         {
             this.BucketID = bucketID;
@@ -52,44 +52,51 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
         }
         
         /// <summary>
-        /// Gets or Sets BucketID
+        /// BucketID of the bucket to place the setting in; you can create a bucket by navigating to account.cloudmersive.com, clicking on Settings &amp;gt; API Configuration &amp;gt; Create Bucket
         /// </summary>
+        /// <value>BucketID of the bucket to place the setting in; you can create a bucket by navigating to account.cloudmersive.com, clicking on Settings &amp;gt; API Configuration &amp;gt; Create Bucket</value>
         [DataMember(Name="BucketID", EmitDefaultValue=false)]
         public string BucketID { get; set; }
 
         /// <summary>
-        /// Gets or Sets BucketSecretKey
+        /// SecretKey of the bucket to place the setting in; you can create a bucket by navigating to account.cloudmersive.com, clicking on Settings &amp;gt; API Configuration &amp;gt; Create Bucket
         /// </summary>
+        /// <value>SecretKey of the bucket to place the setting in; you can create a bucket by navigating to account.cloudmersive.com, clicking on Settings &amp;gt; API Configuration &amp;gt; Create Bucket</value>
         [DataMember(Name="BucketSecretKey", EmitDefaultValue=false)]
         public string BucketSecretKey { get; set; }
 
         /// <summary>
-        /// Gets or Sets SettingName
+        /// Name of the setting to create
         /// </summary>
+        /// <value>Name of the setting to create</value>
         [DataMember(Name="SettingName", EmitDefaultValue=false)]
         public string SettingName { get; set; }
 
         /// <summary>
-        /// Gets or Sets SettingType
+        /// Type of setting to create; possible values are STRING, JSON
         /// </summary>
+        /// <value>Type of setting to create; possible values are STRING, JSON</value>
         [DataMember(Name="SettingType", EmitDefaultValue=false)]
         public string SettingType { get; set; }
 
         /// <summary>
-        /// Gets or Sets SettingValue
+        /// Initial value of the setting
         /// </summary>
+        /// <value>Initial value of the setting</value>
         [DataMember(Name="SettingValue", EmitDefaultValue=false)]
         public Object SettingValue { get; set; }
 
         /// <summary>
-        /// Gets or Sets SettingDescription
+        /// Description of the setting
         /// </summary>
+        /// <value>Description of the setting</value>
         [DataMember(Name="SettingDescription", EmitDefaultValue=false)]
         public string SettingDescription { get; set; }
 
         /// <summary>
-        /// Gets or Sets SettingTags
+        /// Tags to apply to the setting
         /// </summary>
+        /// <value>Tags to apply to the setting</value>
         [DataMember(Name="SettingTags", EmitDefaultValue=false)]
         public string SettingTags { get; set; }
 

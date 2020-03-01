@@ -4,16 +4,16 @@ All URIs are relative to *https://api.cloudmersive.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**SettingsCreateSetting**](SettingsApi.md#settingscreatesetting) | **POST** /config/settings/create | 
-[**SettingsListSettings**](SettingsApi.md#settingslistsettings) | **POST** /config/settings/list | 
-[**SettingsUpdateSetting**](SettingsApi.md#settingsupdatesetting) | **POST** /config/settings/update | 
+[**SettingsCreateSetting**](SettingsApi.md#settingscreatesetting) | **POST** /config/settings/create | Create a setting in the specified bucket
+[**SettingsListSettings**](SettingsApi.md#settingslistsettings) | **POST** /config/settings/list | Enumerate the settings in a bucket
+[**SettingsUpdateSetting**](SettingsApi.md#settingsupdatesetting) | **POST** /config/settings/update | Update a setting
 
 
 <a name="settingscreatesetting"></a>
 # **SettingsCreateSetting**
 > CreateSettingResponse SettingsCreateSetting (CreateSettingRequest request)
 
-
+Create a setting in the specified bucket
 
 ### Example
 ```csharp
@@ -35,10 +35,11 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Apikey", "Bearer");
 
             var apiInstance = new SettingsApi();
-            var request = new CreateSettingRequest(); // CreateSettingRequest | 
+            var request = new CreateSettingRequest(); // CreateSettingRequest | Request to perform the operation on
 
             try
             {
+                // Create a setting in the specified bucket
                 CreateSettingResponse result = apiInstance.SettingsCreateSetting(request);
                 Debug.WriteLine(result);
             }
@@ -55,7 +56,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**CreateSettingRequest**](CreateSettingRequest.md)|  | 
+ **request** | [**CreateSettingRequest**](CreateSettingRequest.md)| Request to perform the operation on | 
 
 ### Return type
 
@@ -76,7 +77,7 @@ Name | Type | Description  | Notes
 # **SettingsListSettings**
 > ListSettingsResponse SettingsListSettings (ListSettingsRequest request)
 
-
+Enumerate the settings in a bucket
 
 ### Example
 ```csharp
@@ -98,10 +99,11 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Apikey", "Bearer");
 
             var apiInstance = new SettingsApi();
-            var request = new ListSettingsRequest(); // ListSettingsRequest | 
+            var request = new ListSettingsRequest(); // ListSettingsRequest | Request to perform the operation on
 
             try
             {
+                // Enumerate the settings in a bucket
                 ListSettingsResponse result = apiInstance.SettingsListSettings(request);
                 Debug.WriteLine(result);
             }
@@ -118,7 +120,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**ListSettingsRequest**](ListSettingsRequest.md)|  | 
+ **request** | [**ListSettingsRequest**](ListSettingsRequest.md)| Request to perform the operation on | 
 
 ### Return type
 
@@ -139,7 +141,7 @@ Name | Type | Description  | Notes
 # **SettingsUpdateSetting**
 > UpdateSettingResponse SettingsUpdateSetting (UpdateSettingRequest request)
 
-
+Update a setting
 
 ### Example
 ```csharp
@@ -161,10 +163,11 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Apikey", "Bearer");
 
             var apiInstance = new SettingsApi();
-            var request = new UpdateSettingRequest(); // UpdateSettingRequest | 
+            var request = new UpdateSettingRequest(); // UpdateSettingRequest | Request to perform the operation on
 
             try
             {
+                // Update a setting
                 UpdateSettingResponse result = apiInstance.SettingsUpdateSetting(request);
                 Debug.WriteLine(result);
             }
@@ -181,7 +184,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**UpdateSettingRequest**](UpdateSettingRequest.md)|  | 
+ **request** | [**UpdateSettingRequest**](UpdateSettingRequest.md)| Request to perform the operation on | 
 
 ### Return type
 

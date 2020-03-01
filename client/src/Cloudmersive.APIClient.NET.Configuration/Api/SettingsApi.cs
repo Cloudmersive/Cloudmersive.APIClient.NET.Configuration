@@ -25,131 +25,131 @@ namespace Cloudmersive.APIClient.NET.Configuration.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Create a setting in the specified bucket
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="request">Request to perform the operation on</param>
         /// <returns>CreateSettingResponse</returns>
         CreateSettingResponse SettingsCreateSetting (CreateSettingRequest request);
 
         /// <summary>
-        /// 
+        /// Create a setting in the specified bucket
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="request">Request to perform the operation on</param>
         /// <returns>ApiResponse of CreateSettingResponse</returns>
         ApiResponse<CreateSettingResponse> SettingsCreateSettingWithHttpInfo (CreateSettingRequest request);
         /// <summary>
-        /// 
+        /// Enumerate the settings in a bucket
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="request">Request to perform the operation on</param>
         /// <returns>ListSettingsResponse</returns>
         ListSettingsResponse SettingsListSettings (ListSettingsRequest request);
 
         /// <summary>
-        /// 
+        /// Enumerate the settings in a bucket
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="request">Request to perform the operation on</param>
         /// <returns>ApiResponse of ListSettingsResponse</returns>
         ApiResponse<ListSettingsResponse> SettingsListSettingsWithHttpInfo (ListSettingsRequest request);
         /// <summary>
-        /// 
+        /// Update a setting
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="request">Request to perform the operation on</param>
         /// <returns>UpdateSettingResponse</returns>
         UpdateSettingResponse SettingsUpdateSetting (UpdateSettingRequest request);
 
         /// <summary>
-        /// 
+        /// Update a setting
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="request">Request to perform the operation on</param>
         /// <returns>ApiResponse of UpdateSettingResponse</returns>
         ApiResponse<UpdateSettingResponse> SettingsUpdateSettingWithHttpInfo (UpdateSettingRequest request);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Create a setting in the specified bucket
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="request">Request to perform the operation on</param>
         /// <returns>Task of CreateSettingResponse</returns>
         System.Threading.Tasks.Task<CreateSettingResponse> SettingsCreateSettingAsync (CreateSettingRequest request);
 
         /// <summary>
-        /// 
+        /// Create a setting in the specified bucket
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="request">Request to perform the operation on</param>
         /// <returns>Task of ApiResponse (CreateSettingResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<CreateSettingResponse>> SettingsCreateSettingAsyncWithHttpInfo (CreateSettingRequest request);
         /// <summary>
-        /// 
+        /// Enumerate the settings in a bucket
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="request">Request to perform the operation on</param>
         /// <returns>Task of ListSettingsResponse</returns>
         System.Threading.Tasks.Task<ListSettingsResponse> SettingsListSettingsAsync (ListSettingsRequest request);
 
         /// <summary>
-        /// 
+        /// Enumerate the settings in a bucket
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="request">Request to perform the operation on</param>
         /// <returns>Task of ApiResponse (ListSettingsResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<ListSettingsResponse>> SettingsListSettingsAsyncWithHttpInfo (ListSettingsRequest request);
         /// <summary>
-        /// 
+        /// Update a setting
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="request">Request to perform the operation on</param>
         /// <returns>Task of UpdateSettingResponse</returns>
         System.Threading.Tasks.Task<UpdateSettingResponse> SettingsUpdateSettingAsync (UpdateSettingRequest request);
 
         /// <summary>
-        /// 
+        /// Update a setting
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="request">Request to perform the operation on</param>
         /// <returns>Task of ApiResponse (UpdateSettingResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<UpdateSettingResponse>> SettingsUpdateSettingAsyncWithHttpInfo (UpdateSettingRequest request);
         #endregion Asynchronous Operations
@@ -253,10 +253,10 @@ namespace Cloudmersive.APIClient.NET.Configuration.Api
         }
 
         /// <summary>
-        ///  
+        /// Create a setting in the specified bucket 
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="request">Request to perform the operation on</param>
         /// <returns>CreateSettingResponse</returns>
         public CreateSettingResponse SettingsCreateSetting (CreateSettingRequest request)
         {
@@ -265,10 +265,10 @@ namespace Cloudmersive.APIClient.NET.Configuration.Api
         }
 
         /// <summary>
-        ///  
+        /// Create a setting in the specified bucket 
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="request">Request to perform the operation on</param>
         /// <returns>ApiResponse of CreateSettingResponse</returns>
         public ApiResponse< CreateSettingResponse > SettingsCreateSettingWithHttpInfo (CreateSettingRequest request)
         {
@@ -339,10 +339,10 @@ namespace Cloudmersive.APIClient.NET.Configuration.Api
         }
 
         /// <summary>
-        ///  
+        /// Create a setting in the specified bucket 
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="request">Request to perform the operation on</param>
         /// <returns>Task of CreateSettingResponse</returns>
         public async System.Threading.Tasks.Task<CreateSettingResponse> SettingsCreateSettingAsync (CreateSettingRequest request)
         {
@@ -352,10 +352,10 @@ namespace Cloudmersive.APIClient.NET.Configuration.Api
         }
 
         /// <summary>
-        ///  
+        /// Create a setting in the specified bucket 
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="request">Request to perform the operation on</param>
         /// <returns>Task of ApiResponse (CreateSettingResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<CreateSettingResponse>> SettingsCreateSettingAsyncWithHttpInfo (CreateSettingRequest request)
         {
@@ -426,10 +426,10 @@ namespace Cloudmersive.APIClient.NET.Configuration.Api
         }
 
         /// <summary>
-        ///  
+        /// Enumerate the settings in a bucket 
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="request">Request to perform the operation on</param>
         /// <returns>ListSettingsResponse</returns>
         public ListSettingsResponse SettingsListSettings (ListSettingsRequest request)
         {
@@ -438,10 +438,10 @@ namespace Cloudmersive.APIClient.NET.Configuration.Api
         }
 
         /// <summary>
-        ///  
+        /// Enumerate the settings in a bucket 
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="request">Request to perform the operation on</param>
         /// <returns>ApiResponse of ListSettingsResponse</returns>
         public ApiResponse< ListSettingsResponse > SettingsListSettingsWithHttpInfo (ListSettingsRequest request)
         {
@@ -512,10 +512,10 @@ namespace Cloudmersive.APIClient.NET.Configuration.Api
         }
 
         /// <summary>
-        ///  
+        /// Enumerate the settings in a bucket 
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="request">Request to perform the operation on</param>
         /// <returns>Task of ListSettingsResponse</returns>
         public async System.Threading.Tasks.Task<ListSettingsResponse> SettingsListSettingsAsync (ListSettingsRequest request)
         {
@@ -525,10 +525,10 @@ namespace Cloudmersive.APIClient.NET.Configuration.Api
         }
 
         /// <summary>
-        ///  
+        /// Enumerate the settings in a bucket 
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="request">Request to perform the operation on</param>
         /// <returns>Task of ApiResponse (ListSettingsResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<ListSettingsResponse>> SettingsListSettingsAsyncWithHttpInfo (ListSettingsRequest request)
         {
@@ -599,10 +599,10 @@ namespace Cloudmersive.APIClient.NET.Configuration.Api
         }
 
         /// <summary>
-        ///  
+        /// Update a setting 
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="request">Request to perform the operation on</param>
         /// <returns>UpdateSettingResponse</returns>
         public UpdateSettingResponse SettingsUpdateSetting (UpdateSettingRequest request)
         {
@@ -611,10 +611,10 @@ namespace Cloudmersive.APIClient.NET.Configuration.Api
         }
 
         /// <summary>
-        ///  
+        /// Update a setting 
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="request">Request to perform the operation on</param>
         /// <returns>ApiResponse of UpdateSettingResponse</returns>
         public ApiResponse< UpdateSettingResponse > SettingsUpdateSettingWithHttpInfo (UpdateSettingRequest request)
         {
@@ -685,10 +685,10 @@ namespace Cloudmersive.APIClient.NET.Configuration.Api
         }
 
         /// <summary>
-        ///  
+        /// Update a setting 
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="request">Request to perform the operation on</param>
         /// <returns>Task of UpdateSettingResponse</returns>
         public async System.Threading.Tasks.Task<UpdateSettingResponse> SettingsUpdateSettingAsync (UpdateSettingRequest request)
         {
@@ -698,10 +698,10 @@ namespace Cloudmersive.APIClient.NET.Configuration.Api
         }
 
         /// <summary>
-        ///  
+        /// Update a setting 
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NET.Configuration.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
+        /// <param name="request">Request to perform the operation on</param>
         /// <returns>Task of ApiResponse (UpdateSettingResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<UpdateSettingResponse>> SettingsUpdateSettingAsyncWithHttpInfo (UpdateSettingRequest request)
         {

@@ -5,7 +5,7 @@ Config API lets you easily manage configuration at scale.
 This C# SDK is for the [Cloudmersive Document and Data Conversion API](https://www.cloudmersive.com/convert-api):
 
 - API version: v1
-- SDK version: 3.0.1
+- SDK version: 3.0.2
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
 
 <a name="frameworks-supported"></a>
@@ -75,17 +75,18 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // Configuration.Default.ApiKeyPrefix.Add("Apikey", "Bearer");
 
-            var apiInstance = new SettingsApi();
-            var request = new CreateSettingRequest(); // CreateSettingRequest | 
+            var apiInstance = new OrchestratorApi();
+            var request = new HttpOrchestrationRequest(); // HttpOrchestrationRequest | 
 
             try
             {
-                CreateSettingResponse result = apiInstance.SettingsCreateSetting(request);
+                // Orchestrate multiple HTTP API calls with a single API call in the order specified.  Call other Cloudmersive APIs or third party APIs.  For Cloudmersive APIs, the API Key will automatically propogate to the child calls without needing to be set explicitly.  Name each task and reference the output of a previous task in the inputs to a given task.
+                HttpOrchestrationResponse result = apiInstance.OrchestratorHttpSimple(request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling SettingsApi.SettingsCreateSetting: " + e.Message );
+                Debug.Print("Exception when calling OrchestratorApi.OrchestratorHttpSimple: " + e.Message );
             }
 
         }
@@ -100,9 +101,10 @@ All URIs are relative to *https://api.cloudmersive.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*SettingsApi* | [**SettingsCreateSetting**](docs/SettingsApi.md#settingscreatesetting) | **POST** /config/settings/create | 
-*SettingsApi* | [**SettingsListSettings**](docs/SettingsApi.md#settingslistsettings) | **POST** /config/settings/list | 
-*SettingsApi* | [**SettingsUpdateSetting**](docs/SettingsApi.md#settingsupdatesetting) | **POST** /config/settings/update | 
+*OrchestratorApi* | [**OrchestratorHttpSimple**](docs/OrchestratorApi.md#orchestratorhttpsimple) | **POST** /config/orchestrator/http/simple | Orchestrate multiple HTTP API calls with a single API call in the order specified.  Call other Cloudmersive APIs or third party APIs.  For Cloudmersive APIs, the API Key will automatically propogate to the child calls without needing to be set explicitly.  Name each task and reference the output of a previous task in the inputs to a given task.
+*SettingsApi* | [**SettingsCreateSetting**](docs/SettingsApi.md#settingscreatesetting) | **POST** /config/settings/create | Create a setting in the specified bucket
+*SettingsApi* | [**SettingsListSettings**](docs/SettingsApi.md#settingslistsettings) | **POST** /config/settings/list | Enumerate the settings in a bucket
+*SettingsApi* | [**SettingsUpdateSetting**](docs/SettingsApi.md#settingsupdatesetting) | **POST** /config/settings/update | Update a setting
 
 
 <a name="documentation-for-models"></a>
@@ -110,9 +112,19 @@ Class | Method | HTTP request | Description
 
  - [Model.CreateSettingRequest](docs/CreateSettingRequest.md)
  - [Model.CreateSettingResponse](docs/CreateSettingResponse.md)
+ - [Model.HttpFormDataParameter](docs/HttpFormDataParameter.md)
+ - [Model.HttpGetParameter](docs/HttpGetParameter.md)
+ - [Model.HttpOrchestrationHeader](docs/HttpOrchestrationHeader.md)
+ - [Model.HttpOrchestrationRequest](docs/HttpOrchestrationRequest.md)
+ - [Model.HttpOrchestrationResponse](docs/HttpOrchestrationResponse.md)
+ - [Model.HttpOrchestrationTask](docs/HttpOrchestrationTask.md)
+ - [Model.HttpRawBinaryParameter](docs/HttpRawBinaryParameter.md)
+ - [Model.HttpRawTextParameter](docs/HttpRawTextParameter.md)
+ - [Model.HttpWwwFormUrlEncodedParameter](docs/HttpWwwFormUrlEncodedParameter.md)
  - [Model.ListSettingsRequest](docs/ListSettingsRequest.md)
  - [Model.ListSettingsResponse](docs/ListSettingsResponse.md)
  - [Model.SettingValue](docs/SettingValue.md)
+ - [Model.TaskOutputReference](docs/TaskOutputReference.md)
  - [Model.UpdateSettingRequest](docs/UpdateSettingRequest.md)
  - [Model.UpdateSettingResponse](docs/UpdateSettingResponse.md)
 

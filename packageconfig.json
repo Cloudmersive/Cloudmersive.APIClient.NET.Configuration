@@ -1,7 +1,7 @@
 ﻿{
 
   "packageName" : "Cloudmersive.APIClient.NET.Configuration",
-  "packageVersion": "3.0.1",
+  "packageVersion": "3.0.2",
   "netCoreProjectFile": "false",
   "packageGuid": "10685302-ea07-49c8-a775-91df17a55330"
 }  

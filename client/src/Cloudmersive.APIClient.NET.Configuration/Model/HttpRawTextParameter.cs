@@ -25,41 +25,35 @@ using SwaggerDateConverter = Cloudmersive.APIClient.NET.Configuration.Client.Swa
 namespace Cloudmersive.APIClient.NET.Configuration.Model
 {
     /// <summary>
-    /// Request to update a setting
+    /// Raw text parameter that defines the entire body of the HTTP payload; cannot be used with other parameter types
     /// </summary>
     [DataContract]
-    public partial class UpdateSettingRequest :  IEquatable<UpdateSettingRequest>, IValidatableObject
+    public partial class HttpRawTextParameter :  IEquatable<HttpRawTextParameter>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateSettingRequest" /> class.
+        /// Initializes a new instance of the <see cref="HttpRawTextParameter" /> class.
         /// </summary>
-        /// <param name="bucketID">bucketID.</param>
-        /// <param name="bucketSecretKey">bucketSecretKey.</param>
-        /// <param name="settingToUpdate">settingToUpdate.</param>
-        public UpdateSettingRequest(string bucketID = default(string), string bucketSecretKey = default(string), SettingValue settingToUpdate = default(SettingValue))
+        /// <param name="parameterValue">Text value of the parameter.</param>
+        /// <param name="useOutputFromPreviousTask">Optional; use the output from a previous task as the input to this parameter.  Set to null (default) to ignore..</param>
+        public HttpRawTextParameter(string parameterValue = default(string), TaskOutputReference useOutputFromPreviousTask = default(TaskOutputReference))
         {
-            this.BucketID = bucketID;
-            this.BucketSecretKey = bucketSecretKey;
-            this.SettingToUpdate = settingToUpdate;
+            this.ParameterValue = parameterValue;
+            this.UseOutputFromPreviousTask = useOutputFromPreviousTask;
         }
         
         /// <summary>
-        /// Gets or Sets BucketID
+        /// Text value of the parameter
         /// </summary>
-        [DataMember(Name="BucketID", EmitDefaultValue=false)]
-        public string BucketID { get; set; }
+        /// <value>Text value of the parameter</value>
+        [DataMember(Name="ParameterValue", EmitDefaultValue=false)]
+        public string ParameterValue { get; set; }
 
         /// <summary>
-        /// Gets or Sets BucketSecretKey
+        /// Optional; use the output from a previous task as the input to this parameter.  Set to null (default) to ignore.
         /// </summary>
-        [DataMember(Name="BucketSecretKey", EmitDefaultValue=false)]
-        public string BucketSecretKey { get; set; }
-
-        /// <summary>
-        /// Gets or Sets SettingToUpdate
-        /// </summary>
-        [DataMember(Name="SettingToUpdate", EmitDefaultValue=false)]
-        public SettingValue SettingToUpdate { get; set; }
+        /// <value>Optional; use the output from a previous task as the input to this parameter.  Set to null (default) to ignore.</value>
+        [DataMember(Name="UseOutputFromPreviousTask", EmitDefaultValue=false)]
+        public TaskOutputReference UseOutputFromPreviousTask { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -68,10 +62,9 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdateSettingRequest {\n");
-            sb.Append("  BucketID: ").Append(BucketID).Append("\n");
-            sb.Append("  BucketSecretKey: ").Append(BucketSecretKey).Append("\n");
-            sb.Append("  SettingToUpdate: ").Append(SettingToUpdate).Append("\n");
+            sb.Append("class HttpRawTextParameter {\n");
+            sb.Append("  ParameterValue: ").Append(ParameterValue).Append("\n");
+            sb.Append("  UseOutputFromPreviousTask: ").Append(UseOutputFromPreviousTask).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -92,34 +85,29 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateSettingRequest);
+            return this.Equals(input as HttpRawTextParameter);
         }
 
         /// <summary>
-        /// Returns true if UpdateSettingRequest instances are equal
+        /// Returns true if HttpRawTextParameter instances are equal
         /// </summary>
-        /// <param name="input">Instance of UpdateSettingRequest to be compared</param>
+        /// <param name="input">Instance of HttpRawTextParameter to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UpdateSettingRequest input)
+        public bool Equals(HttpRawTextParameter input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.BucketID == input.BucketID ||
-                    (this.BucketID != null &&
-                    this.BucketID.Equals(input.BucketID))
+                    this.ParameterValue == input.ParameterValue ||
+                    (this.ParameterValue != null &&
+                    this.ParameterValue.Equals(input.ParameterValue))
                 ) && 
                 (
-                    this.BucketSecretKey == input.BucketSecretKey ||
-                    (this.BucketSecretKey != null &&
-                    this.BucketSecretKey.Equals(input.BucketSecretKey))
-                ) && 
-                (
-                    this.SettingToUpdate == input.SettingToUpdate ||
-                    (this.SettingToUpdate != null &&
-                    this.SettingToUpdate.Equals(input.SettingToUpdate))
+                    this.UseOutputFromPreviousTask == input.UseOutputFromPreviousTask ||
+                    (this.UseOutputFromPreviousTask != null &&
+                    this.UseOutputFromPreviousTask.Equals(input.UseOutputFromPreviousTask))
                 );
         }
 
@@ -132,12 +120,10 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.BucketID != null)
-                    hashCode = hashCode * 59 + this.BucketID.GetHashCode();
-                if (this.BucketSecretKey != null)
-                    hashCode = hashCode * 59 + this.BucketSecretKey.GetHashCode();
-                if (this.SettingToUpdate != null)
-                    hashCode = hashCode * 59 + this.SettingToUpdate.GetHashCode();
+                if (this.ParameterValue != null)
+                    hashCode = hashCode * 59 + this.ParameterValue.GetHashCode();
+                if (this.UseOutputFromPreviousTask != null)
+                    hashCode = hashCode * 59 + this.UseOutputFromPreviousTask.GetHashCode();
                 return hashCode;
             }
         }

@@ -25,41 +25,35 @@ using SwaggerDateConverter = Cloudmersive.APIClient.NET.Configuration.Client.Swa
 namespace Cloudmersive.APIClient.NET.Configuration.Model
 {
     /// <summary>
-    /// Request to update a setting
+    /// Re-use the output from a previously-completed task
     /// </summary>
     [DataContract]
-    public partial class UpdateSettingRequest :  IEquatable<UpdateSettingRequest>, IValidatableObject
+    public partial class TaskOutputReference :  IEquatable<TaskOutputReference>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateSettingRequest" /> class.
+        /// Initializes a new instance of the <see cref="TaskOutputReference" /> class.
         /// </summary>
-        /// <param name="bucketID">bucketID.</param>
-        /// <param name="bucketSecretKey">bucketSecretKey.</param>
-        /// <param name="settingToUpdate">settingToUpdate.</param>
-        public UpdateSettingRequest(string bucketID = default(string), string bucketSecretKey = default(string), SettingValue settingToUpdate = default(SettingValue))
+        /// <param name="taskName">Name of the task to use the output from.</param>
+        /// <param name="targetType">Type to convert the output from the referenced task to; possible values are string, binary.</param>
+        public TaskOutputReference(string taskName = default(string), string targetType = default(string))
         {
-            this.BucketID = bucketID;
-            this.BucketSecretKey = bucketSecretKey;
-            this.SettingToUpdate = settingToUpdate;
+            this.TaskName = taskName;
+            this.TargetType = targetType;
         }
         
         /// <summary>
-        /// Gets or Sets BucketID
+        /// Name of the task to use the output from
         /// </summary>
-        [DataMember(Name="BucketID", EmitDefaultValue=false)]
-        public string BucketID { get; set; }
+        /// <value>Name of the task to use the output from</value>
+        [DataMember(Name="TaskName", EmitDefaultValue=false)]
+        public string TaskName { get; set; }
 
         /// <summary>
-        /// Gets or Sets BucketSecretKey
+        /// Type to convert the output from the referenced task to; possible values are string, binary
         /// </summary>
-        [DataMember(Name="BucketSecretKey", EmitDefaultValue=false)]
-        public string BucketSecretKey { get; set; }
-
-        /// <summary>
-        /// Gets or Sets SettingToUpdate
-        /// </summary>
-        [DataMember(Name="SettingToUpdate", EmitDefaultValue=false)]
-        public SettingValue SettingToUpdate { get; set; }
+        /// <value>Type to convert the output from the referenced task to; possible values are string, binary</value>
+        [DataMember(Name="TargetType", EmitDefaultValue=false)]
+        public string TargetType { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -68,10 +62,9 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdateSettingRequest {\n");
-            sb.Append("  BucketID: ").Append(BucketID).Append("\n");
-            sb.Append("  BucketSecretKey: ").Append(BucketSecretKey).Append("\n");
-            sb.Append("  SettingToUpdate: ").Append(SettingToUpdate).Append("\n");
+            sb.Append("class TaskOutputReference {\n");
+            sb.Append("  TaskName: ").Append(TaskName).Append("\n");
+            sb.Append("  TargetType: ").Append(TargetType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -92,34 +85,29 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateSettingRequest);
+            return this.Equals(input as TaskOutputReference);
         }
 
         /// <summary>
-        /// Returns true if UpdateSettingRequest instances are equal
+        /// Returns true if TaskOutputReference instances are equal
         /// </summary>
-        /// <param name="input">Instance of UpdateSettingRequest to be compared</param>
+        /// <param name="input">Instance of TaskOutputReference to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UpdateSettingRequest input)
+        public bool Equals(TaskOutputReference input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.BucketID == input.BucketID ||
-                    (this.BucketID != null &&
-                    this.BucketID.Equals(input.BucketID))
+                    this.TaskName == input.TaskName ||
+                    (this.TaskName != null &&
+                    this.TaskName.Equals(input.TaskName))
                 ) && 
                 (
-                    this.BucketSecretKey == input.BucketSecretKey ||
-                    (this.BucketSecretKey != null &&
-                    this.BucketSecretKey.Equals(input.BucketSecretKey))
-                ) && 
-                (
-                    this.SettingToUpdate == input.SettingToUpdate ||
-                    (this.SettingToUpdate != null &&
-                    this.SettingToUpdate.Equals(input.SettingToUpdate))
+                    this.TargetType == input.TargetType ||
+                    (this.TargetType != null &&
+                    this.TargetType.Equals(input.TargetType))
                 );
         }
 
@@ -132,12 +120,10 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.BucketID != null)
-                    hashCode = hashCode * 59 + this.BucketID.GetHashCode();
-                if (this.BucketSecretKey != null)
-                    hashCode = hashCode * 59 + this.BucketSecretKey.GetHashCode();
-                if (this.SettingToUpdate != null)
-                    hashCode = hashCode * 59 + this.SettingToUpdate.GetHashCode();
+                if (this.TaskName != null)
+                    hashCode = hashCode * 59 + this.TaskName.GetHashCode();
+                if (this.TargetType != null)
+                    hashCode = hashCode * 59 + this.TargetType.GetHashCode();
                 return hashCode;
             }
         }

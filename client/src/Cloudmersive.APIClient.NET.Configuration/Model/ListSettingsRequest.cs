@@ -25,7 +25,7 @@ using SwaggerDateConverter = Cloudmersive.APIClient.NET.Configuration.Client.Swa
 namespace Cloudmersive.APIClient.NET.Configuration.Model
 {
     /// <summary>
-    /// ListSettingsRequest
+    /// Request to enumerate settings
     /// </summary>
     [DataContract]
     public partial class ListSettingsRequest :  IEquatable<ListSettingsRequest>, IValidatableObject
@@ -33,8 +33,8 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ListSettingsRequest" /> class.
         /// </summary>
-        /// <param name="bucketID">bucketID.</param>
-        /// <param name="bucketSecretKey">bucketSecretKey.</param>
+        /// <param name="bucketID">BucketID of the bucket to enumerate the settings of; you can create a bucket by navigating to account.cloudmersive.com, clicking on Settings &amp;gt; API Configuration &amp;gt; Create Bucket.</param>
+        /// <param name="bucketSecretKey">SecretKey of the bucket enumerate the settings of; you can create a bucket by navigating to account.cloudmersive.com, clicking on Settings &amp;gt; API Configuration &amp;gt; Create Bucket.</param>
         public ListSettingsRequest(string bucketID = default(string), string bucketSecretKey = default(string))
         {
             this.BucketID = bucketID;
@@ -42,14 +42,16 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
         }
         
         /// <summary>
-        /// Gets or Sets BucketID
+        /// BucketID of the bucket to enumerate the settings of; you can create a bucket by navigating to account.cloudmersive.com, clicking on Settings &amp;gt; API Configuration &amp;gt; Create Bucket
         /// </summary>
+        /// <value>BucketID of the bucket to enumerate the settings of; you can create a bucket by navigating to account.cloudmersive.com, clicking on Settings &amp;gt; API Configuration &amp;gt; Create Bucket</value>
         [DataMember(Name="BucketID", EmitDefaultValue=false)]
         public string BucketID { get; set; }
 
         /// <summary>
-        /// Gets or Sets BucketSecretKey
+        /// SecretKey of the bucket enumerate the settings of; you can create a bucket by navigating to account.cloudmersive.com, clicking on Settings &amp;gt; API Configuration &amp;gt; Create Bucket
         /// </summary>
+        /// <value>SecretKey of the bucket enumerate the settings of; you can create a bucket by navigating to account.cloudmersive.com, clicking on Settings &amp;gt; API Configuration &amp;gt; Create Bucket</value>
         [DataMember(Name="BucketSecretKey", EmitDefaultValue=false)]
         public string BucketSecretKey { get; set; }
 

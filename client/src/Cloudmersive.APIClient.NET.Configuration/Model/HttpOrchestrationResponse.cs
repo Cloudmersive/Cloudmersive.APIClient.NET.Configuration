@@ -25,24 +25,24 @@ using SwaggerDateConverter = Cloudmersive.APIClient.NET.Configuration.Client.Swa
 namespace Cloudmersive.APIClient.NET.Configuration.Model
 {
     /// <summary>
-    /// Result of performing a create setting operation
+    /// Result of performing an HTTP orchestration
     /// </summary>
     [DataContract]
-    public partial class CreateSettingResponse :  IEquatable<CreateSettingResponse>, IValidatableObject
+    public partial class HttpOrchestrationResponse :  IEquatable<HttpOrchestrationResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateSettingResponse" /> class.
+        /// Initializes a new instance of the <see cref="HttpOrchestrationResponse" /> class.
         /// </summary>
         /// <param name="successful">True if the operation was successful, false otherwise.</param>
-        /// <param name="settingDefinitionID">SettingDefinitionID of the setting created.</param>
-        /// <param name="settingValueID">SettingValueID of the value of the setting.</param>
-        /// <param name="errorMessage">Error message, if any, when the operation was not successful.</param>
-        public CreateSettingResponse(bool? successful = default(bool?), string settingDefinitionID = default(string), string settingValueID = default(string), string errorMessage = default(string))
+        /// <param name="tasksCompleted">Count of the number of tasks that were completed.</param>
+        /// <param name="outputStringType">Result output in string format.</param>
+        /// <param name="outputBinaryType">Result output in binary format.</param>
+        public HttpOrchestrationResponse(bool? successful = default(bool?), int? tasksCompleted = default(int?), string outputStringType = default(string), byte[] outputBinaryType = default(byte[]))
         {
             this.Successful = successful;
-            this.SettingDefinitionID = settingDefinitionID;
-            this.SettingValueID = settingValueID;
-            this.ErrorMessage = errorMessage;
+            this.TasksCompleted = tasksCompleted;
+            this.OutputStringType = outputStringType;
+            this.OutputBinaryType = outputBinaryType;
         }
         
         /// <summary>
@@ -53,25 +53,25 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
         public bool? Successful { get; set; }
 
         /// <summary>
-        /// SettingDefinitionID of the setting created
+        /// Count of the number of tasks that were completed
         /// </summary>
-        /// <value>SettingDefinitionID of the setting created</value>
-        [DataMember(Name="SettingDefinitionID", EmitDefaultValue=false)]
-        public string SettingDefinitionID { get; set; }
+        /// <value>Count of the number of tasks that were completed</value>
+        [DataMember(Name="TasksCompleted", EmitDefaultValue=false)]
+        public int? TasksCompleted { get; set; }
 
         /// <summary>
-        /// SettingValueID of the value of the setting
+        /// Result output in string format
         /// </summary>
-        /// <value>SettingValueID of the value of the setting</value>
-        [DataMember(Name="SettingValueID", EmitDefaultValue=false)]
-        public string SettingValueID { get; set; }
+        /// <value>Result output in string format</value>
+        [DataMember(Name="Output_StringType", EmitDefaultValue=false)]
+        public string OutputStringType { get; set; }
 
         /// <summary>
-        /// Error message, if any, when the operation was not successful
+        /// Result output in binary format
         /// </summary>
-        /// <value>Error message, if any, when the operation was not successful</value>
-        [DataMember(Name="ErrorMessage", EmitDefaultValue=false)]
-        public string ErrorMessage { get; set; }
+        /// <value>Result output in binary format</value>
+        [DataMember(Name="Output_BinaryType", EmitDefaultValue=false)]
+        public byte[] OutputBinaryType { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -80,11 +80,11 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CreateSettingResponse {\n");
+            sb.Append("class HttpOrchestrationResponse {\n");
             sb.Append("  Successful: ").Append(Successful).Append("\n");
-            sb.Append("  SettingDefinitionID: ").Append(SettingDefinitionID).Append("\n");
-            sb.Append("  SettingValueID: ").Append(SettingValueID).Append("\n");
-            sb.Append("  ErrorMessage: ").Append(ErrorMessage).Append("\n");
+            sb.Append("  TasksCompleted: ").Append(TasksCompleted).Append("\n");
+            sb.Append("  OutputStringType: ").Append(OutputStringType).Append("\n");
+            sb.Append("  OutputBinaryType: ").Append(OutputBinaryType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,15 +105,15 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateSettingResponse);
+            return this.Equals(input as HttpOrchestrationResponse);
         }
 
         /// <summary>
-        /// Returns true if CreateSettingResponse instances are equal
+        /// Returns true if HttpOrchestrationResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of CreateSettingResponse to be compared</param>
+        /// <param name="input">Instance of HttpOrchestrationResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CreateSettingResponse input)
+        public bool Equals(HttpOrchestrationResponse input)
         {
             if (input == null)
                 return false;
@@ -125,19 +125,19 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
                     this.Successful.Equals(input.Successful))
                 ) && 
                 (
-                    this.SettingDefinitionID == input.SettingDefinitionID ||
-                    (this.SettingDefinitionID != null &&
-                    this.SettingDefinitionID.Equals(input.SettingDefinitionID))
+                    this.TasksCompleted == input.TasksCompleted ||
+                    (this.TasksCompleted != null &&
+                    this.TasksCompleted.Equals(input.TasksCompleted))
                 ) && 
                 (
-                    this.SettingValueID == input.SettingValueID ||
-                    (this.SettingValueID != null &&
-                    this.SettingValueID.Equals(input.SettingValueID))
+                    this.OutputStringType == input.OutputStringType ||
+                    (this.OutputStringType != null &&
+                    this.OutputStringType.Equals(input.OutputStringType))
                 ) && 
                 (
-                    this.ErrorMessage == input.ErrorMessage ||
-                    (this.ErrorMessage != null &&
-                    this.ErrorMessage.Equals(input.ErrorMessage))
+                    this.OutputBinaryType == input.OutputBinaryType ||
+                    (this.OutputBinaryType != null &&
+                    this.OutputBinaryType.Equals(input.OutputBinaryType))
                 );
         }
 
@@ -152,12 +152,12 @@ namespace Cloudmersive.APIClient.NET.Configuration.Model
                 int hashCode = 41;
                 if (this.Successful != null)
                     hashCode = hashCode * 59 + this.Successful.GetHashCode();
-                if (this.SettingDefinitionID != null)
-                    hashCode = hashCode * 59 + this.SettingDefinitionID.GetHashCode();
-                if (this.SettingValueID != null)
-                    hashCode = hashCode * 59 + this.SettingValueID.GetHashCode();
-                if (this.ErrorMessage != null)
-                    hashCode = hashCode * 59 + this.ErrorMessage.GetHashCode();
+                if (this.TasksCompleted != null)
+                    hashCode = hashCode * 59 + this.TasksCompleted.GetHashCode();
+                if (this.OutputStringType != null)
+                    hashCode = hashCode * 59 + this.OutputStringType.GetHashCode();
+                if (this.OutputBinaryType != null)
+                    hashCode = hashCode * 59 + this.OutputBinaryType.GetHashCode();
                 return hashCode;
             }
         }
